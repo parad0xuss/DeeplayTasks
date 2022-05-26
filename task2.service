@@ -1,0 +1,11 @@
+[Unit]
+Description=service4task2
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/prod/
+ExecStart=/bin/java -jar ./app.jar ./output.txt "Service is working!"
+Restart=on-failure
+RestartSec=5
